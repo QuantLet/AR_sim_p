@@ -1,0 +1,11 @@
+Name of Quantlet:    'AR_sim_p'
+
+Published in:        'Published in: Watt did you expect?'
+
+Description:         'This Quantlet produces plots AR(p) model, with different segments of stationarity, colored by the specific segment.'
+
+Keywords:            'time series, AR, plot'
+
+Author:         Raul Cristian Bag, Stefan Lessmann, Daniel Traian Pele, Wolfgang Karl Härdle
+
+Datafile:            AR_3_simulated_series.csv
