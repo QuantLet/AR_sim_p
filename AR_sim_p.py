@@ -105,16 +105,13 @@ def simulate(n_total, coeffs, change_points, p):
     })
     return df
 
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib as mpl
 
 def plot_time_series(
     df,
     value_col='N',
     segment_col='segment',
     time_col=None,                   # e.g., 'Date'; if None, uses df.index
-    colors=None,                     # dict {seg: color}, list/tuple, single color, or mpl colormap
+    colors=None,                     # dict {seg: color}, list/tuple, single color, or plt colormap
     title="AR Time Series",
     filename=None,
     lw=1.8,
@@ -168,7 +165,7 @@ def plot_time_series(
     uniq = np.unique(seg)
 
     def default_tab10():
-        cmap = mpl.colormaps['tab10']
+        cmap = plt.colormaps['tab10']
         return {s: cmap(i % 10) for i, s in enumerate(sorted(uniq))}
 
     if colors is None:
@@ -178,7 +175,7 @@ def plot_time_series(
         color_map = {**default_tab10(), **colors}
     elif isinstance(colors, (list, tuple)):
         color_map = {s: colors[i % len(colors)] for i, s in enumerate(sorted(uniq))}
-    elif isinstance(colors, mpl.colors.Colormap):
+    elif isinstance(colors, plt.colors.Colormap):
         # Normalize by rank among unique segments
         ranks = {s: i for i, s in enumerate(sorted(uniq))}
         denom = max(len(uniq)-1, 1)
