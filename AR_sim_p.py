@@ -243,6 +243,6 @@ if __name__ == "__main__":
     df = simulate(n_total, coeffs, change_points, p)
     df.to_csv(f"AR_{p}_simulated_series.csv", index=False)
 
-    plot_time_series(df, colors={0: IDA_COLORS["blue"], 1: IDA_COLORS["red"], 2: IDA_COLORS["green"]},
+    plot_time_series(df, colors={0: IDA_COLORS["red"], 1: IDA_COLORS["green"], 2: IDA_COLORS["orange"]},
                     title=f"AR ({p}) simulated data.png",
                     filename=f"AR_{p}_simulated_series.png")
